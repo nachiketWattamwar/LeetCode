@@ -1,0 +1,26 @@
+Runtime : 44ms
+
+class Solution:
+    def detectCapitalUse(self, word):
+        """
+        :type word: str
+        :rtype: bool
+        """
+        
+        if len(word) > 0:
+            newword=list(word)
+            firstl=newword[0]
+            newword=str(newword[1:])
+            print(newword)
+        
+        
+        if word.isupper():
+            return True
+        elif word.islower():
+            return True
+        elif str(firstl).isupper() and newword.islower():
+            return True
+        else:
+            return False
+ 
+        
