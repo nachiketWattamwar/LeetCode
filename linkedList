@@ -1,0 +1,137 @@
+    
+    #https://coderpad.io/NZ9EEXFD
+
+#Your previous Python 3 content is preserved below:
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+        
+        
+
+
+class Solution:
+    
+    
+    def __init__(self):
+
+        self.head = None
+        
+        
+    def ins(self,val):
+        tmp = ListNode(val)
+        
+        if self.head is None:
+            self.head = tmp
+        else:
+            p = self.head
+            while(p.next):
+                p = p.next
+            p.next = tmp
+            
+            
+        
+    def printall(self):
+        s = self.head
+        while s:
+            print(s.val,"->",)
+            s = s.next
+        
+        
+    def insAtFirst(self,val):
+        
+        if self.head is None:
+            self.head = tmp
+            
+        else:
+            p = self.head
+            tmp = ListNode(val)
+            tmp.next = self.head
+            self.head = tmp
+        
+    def delNode(self,val):
+        
+        p = self.head
+        if self.head.val == val:
+            tmp = self.head.next
+            del self.head
+            self.head = tmp 
+            return
+        
+        
+        
+        if p is None:
+            return None
+        
+        while p and p.next:
+            # print(p.next.val)
+            if p.next.val == val:
+                break
+            # print (p.val)
+            p = p.next
+            
+        q = p.next
+        p.next = q.next
+        del q
+        
+    #c.next = p.next
+        
+    def insPos(self,pos,val):
+        
+        if  self.head is None:
+            return
+        if  pos == 1:
+            p = self.head
+            tmp = ListNode(val)
+            tmp.next = self.head
+            self.head = tmp
+            return
+            
+        
+        p = self.head
+        
+        
+        for a in range(0,pos-2):
+            if(p):
+                p = p.next
+            
+            
+        c = p
+        print(p.val)
+        tmp = ListNode(val)
+        tmp.next = p.next
+        c.next = tmp
+            
+        
+        
+        
+
+s = Solution()
+ 
+
+while 1:
+    v =  input("enter no ")
+    v = int(v)
+    if v == -1:
+        break
+    else:
+        s.ins(v)
+
+        
+        
+
+#s.printall()
+#s.insAtFirst(100)
+#s.delNode(2)
+pos = input("enter pos")
+s.insPos(int(pos),22)
+s.printall()
+    
+
+
+    
+        
+        
+        
+
